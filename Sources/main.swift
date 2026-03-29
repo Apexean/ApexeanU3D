@@ -4,6 +4,55 @@
 import AppKit
 import SceneKit
 
+final class StartMenuView: NSView {
+    override init(frame: NSRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupUI() {
+        let title = NSTextField(labelWithString: "Apexean U 3D")
+        title.font = NSFont.systemFont(ofSize: 32, weight: .bold)
+        title.alignment = .center
+        title.frame = NSRect(x: 0, y: bounds.height - 120, width: bounds.width, height: 50)
+        title.autoresizingMask = [.width, .minYMargin]
+        addSubview(title)
+
+        let newButton = makeButton("New Project", action: #selector(newProject))
+        newButton.frame.origin = CGPoint(x: bounds.midX - 100, y: bounds.midY + 20)
+        addSubview(newButton)
+
+        let importButton = makeButton("Import Model", action: #selector(importModel))
+        importButton.frame.origin = CGPoint(x: bounds.midX - 100, y: bounds.midY - 40)
+        addSubview(importButton)
+    }
+
+    private func makeButton(_ title: String, action: Selector) -> NSButton {
+        let btn = NSButton(title: title, target: self, action: action)
+        btn.setButtonType(.momentaryPushIn)
+        btn.bezelStyle = .rounded
+        btn.frame.size = CGSize(width: 200, height: 40)
+        return btn
+    }
+
+    @objc private func newProject() {
+        NotificationCenter.default.post(name: .startNewProject, object: nil)
+    }
+
+    @objc private func importModel() {
+        NotificationCenter.default.post(name: .importModel, object: nil)
+    }
+}
+
+extension Notification.Name {
+    static let startNewProject = Notification.Name("startNewProject")
+    static let importModel = Notification.Name("importModel")
+}
+
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
