@@ -4,7 +4,7 @@ A alternative to Blender made so it is easier to make Roblox UGC.
 # System Requirements
 NOTE: Only works on macOS currently.
 # 
-macOS Sequoia 15.7.5
+macOS Sonoma 14
 # 
 Intel Core i3
 # 
