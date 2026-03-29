@@ -50,7 +50,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
     }
-
+    
+    @MainActor
     private func setupScene() {
         let scene = SCNScene()
 
