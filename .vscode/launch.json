@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ApexeanU3D}",
+            "name": "Debug Apexean U 3D",
+            "target": "Apexean U 3D",
+            "configuration": "debug",
+            "preLaunchTask": "swift: Build Debug Apexean U 3D"
+        },
+        {
+            "type": "swift",
+            "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder:ApexeanU3D}",
+            "name": "Release Apexean U 3D",
+            "target": "Apexean U 3D",
+            "configuration": "release",
+            "preLaunchTask": "swift: Build Release Apexean U 3D"
+        }
+    ]
+}

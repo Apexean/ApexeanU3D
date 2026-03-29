@@ -4,6 +4,7 @@
 import AppKit
 import SceneKit
 
+@MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
     var sceneView: SCNView!

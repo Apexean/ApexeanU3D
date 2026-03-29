@@ -1,0 +1,47 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "ApexeanU3D-x86_64-apple-macosx15.0-debug.module": ["<ApexeanU3D-x86_64-apple-macosx15.0-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<ApexeanU3D-x86_64-apple-macosx15.0-debug.module>"]
+  "test": ["<ApexeanU3D-x86_64-apple-macosx15.0-debug.module>"]
+default: "main"
+nodes:
+  "/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/Sources/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ApexeanU3D.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/Sources/main.swift"]
+    outputs: ["/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ApexeanU3D.build/sources"]
+    description: "Write auxiliary file /Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ApexeanU3D.build/sources"
+
+  "/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Library/Developer/CommandLineTools/usr/bin/swiftc"]
+    outputs: ["/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt"
+
+  "<ApexeanU3D-x86_64-apple-macosx15.0-debug.module>":
+    tool: phony
+    inputs: ["/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/Modules/ApexeanU3D.swiftmodule"]
+    outputs: ["<ApexeanU3D-x86_64-apple-macosx15.0-debug.module>"]
+
+  "C.ApexeanU3D-x86_64-apple-macosx15.0-debug.module":
+    tool: shell
+    inputs: ["/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/Sources/main.swift","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/swift-version--1AB21518FC5DEDBE.txt","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ApexeanU3D.build/sources"]
+    outputs: ["/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/Modules/ApexeanU3D.swiftmodule"]
+    description: "Compiling Swift Module 'ApexeanU3D' (1 sources)"
+    args: ["/Library/Developer/CommandLineTools/usr/bin/swiftc","-module-name","ApexeanU3D","-emit-dependencies","-emit-module","-emit-module-path","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/Modules/ApexeanU3D.swiftmodule","-output-file-map","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ApexeanU3D.build/output-file-map.json","-incremental","@/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ApexeanU3D.build/sources","-I","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/Modules","-target","x86_64-apple-macosx13.0","-enable-batch-mode","-Onone","-enable-testing","-j4","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/.build/index-build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","ApexeanU3D_main","-parse-as-library","-swift-version","6","-Xfrontend","-experimental-lazy-typecheck","-Xfrontend","-experimental-skip-all-function-bodies","-Xfrontend","-experimental-allow-module-with-compiler-errors","-Xfrontend","-empty-abi-descriptor","-F","/Library/Developer/CommandLineTools/Library/Developer/Frameworks","-sdk","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-g","-Xcc","-isysroot","-Xcc","/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk","-Xcc","-fPIC","-Xcc","-g","-package-name","apexeanu3d"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/Sources/","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/Package.swift","/Users/rubsiz/Documents/ApexeanU3D/ApexeanU3D/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+
