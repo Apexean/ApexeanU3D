@@ -23,3 +23,5 @@ Any GPU tht can do 1080p and has 4gb
 
 4gb of RAM (Memory) 
 ![MC68451_p1160081](https://github.com/user-attachments/assets/5e777f72-a69e-4389-82f8-8ceaf74e5d76)
+
+Licensed under the MIT License. Owned by Windows Studio :D
