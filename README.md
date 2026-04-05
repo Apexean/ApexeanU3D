@@ -16,7 +16,9 @@ Intel Core i3
 # 
 
 Any GPU tht can do 1080p and has 4gb
+![ANTIC_chip_on_an_Atari_130XE_motherboard](https://github.com/user-attachments/assets/baa66ce1-1dd7-40ec-bdee-6159daede43b)
 
 # 
 
 4gb of RAM (Memory) 
+![MC68451_p1160081](https://github.com/user-attachments/assets/5e777f72-a69e-4389-82f8-8ceaf74e5d76)
