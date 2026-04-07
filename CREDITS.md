@@ -1,4 +1,4 @@
-#Credits
+Credits
 
 - All of these credits are reffering to their GitHub Username.
 
