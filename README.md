@@ -1,6 +1,6 @@
 # ApexeanU3D
 A alternative to Blender made so it is easier to make Roblox UGC.
-<img width="500" height="500" alt="U3d Logo" src="https://github.com/user-attachments/assets/4164ddae-3f65-4dfb-b42a-7fe019b5e59f" />
+<img width="500" height="500" alt="U3d Logo" src="https://raw.githubusercontent.com/Apexean/ApexeanU3D/main/.github/images/apexeanu3dlogo.png" />
 
 # System Requirements
 NOTE: Only works on macOS currently.
