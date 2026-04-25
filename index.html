@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apexean Dev Studio Tools</title>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video.js"></script>
 </head>
 <body style="background:black; color:white; text-align:center; font-family:Lucida Sans Unicode, sans-serif;">
 	<h1>Welcome to the Apexean Dev Studio Tools page!</h1>
@@ -15,5 +16,11 @@
         <!-- Fallback text for unsupported browsers -->
         Your browser does not support the HTML5 video tag.
     </video>
+	<!-- All components inside automatically connect to state -->
+<video-player>
+  <video-skin>
+    <video src="SiteStuff/webbyvideo.mp4"></video>
+  </video-skin>
+</video-player>
 </body>
 </html>
