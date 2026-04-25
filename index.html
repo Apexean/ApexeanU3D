@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Apexean Dev Studio Tools</title>
 	<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/media/hls-video.js"></script>
 </head>
 <body style="background:black; color:white; text-align:center; font-family:Lucida Sans Unicode, sans-serif;">
 	<h1>Welcome to the Apexean Dev Studio Tools page!</h1>
@@ -17,9 +18,24 @@
         Your browser does not support the HTML5 video tag.
     </video>
 	<!-- All components inside automatically connect to state -->
+<!--
+  The PlayerProvider passes state between the UI components
+  and Media, and makes fully custom UIs possible.
+  It does not have layout by default (display:contents)
+ -->
 <video-player>
+  <!--
+    Skins contain the entire player UI and are easily swappable.
+    They can each be "ejected" for full control and customization
+    of UI components.
+   -->
   <video-skin>
-    <video src='SiteStuff/webbyvideo.mp4'></video>
+    <!--
+      Media are players without UIs, handling networking
+      and display of the media. They are easily swappable
+      to handle different sources.
+    -->
+    <hls-video src="https://stream.mux.com/oucapbKg00FVuOaiWYl5r2a2bmJdCp01zchIsrj2X9a9k.m3u8" playsinline></hls-video>
   </video-skin>
 </video-player>
 </body>
